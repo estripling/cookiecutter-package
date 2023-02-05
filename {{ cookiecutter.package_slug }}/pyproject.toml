@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "{{ cookiecutter.package_slug }}"
+version = "{{ cookiecutter.package_version }}"
+description = "{{ cookiecutter.package_short_description }}"
+authors = ["{{ cookiecutter.package_developers }}"]
+license = "{{ cookiecutter.license }}"
+readme = "README.md"
+repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.package_slug }}"
+documentation = "https://{{ cookiecutter.package_slug }}.readthedocs.io/en/stable/"
+keywords = ["{{ cookiecutter.package_slug }}"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+[tool.poetry.dependencies]
+python = "^{{ cookiecutter.python_version }}"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+black = {extras = ["jupyter"], version = "^22.6.0"}
+isort = "^5.10.1"
+flake8 = "^4.0.1"
+python-semantic-release = "^7.31.2"
+jupyter = "^1.0.0"
+myst-nb = "^0.15.0"
+sphinx-autoapi = "^1.8.4"
+sphinx-copybutton = "^0.5.0"
+furo = "^2022.6.21"
+
+[tool.black]
+line-length = {{ cookiecutter.max_line_length }}
+
+[tool.semantic_release]
+version_variable = "pyproject.toml:version"
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "poetry build"
+dist_path = "dist/"
+upload_to_release = true
+upload_to_pypi = false
+remove_dist = false
+patch_without_tag = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

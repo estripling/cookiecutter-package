@@ -1,0 +1,17 @@
+{
+  "github_username": "estripling",
+  "package_name": "My Python Package",
+  "package_slug": "{{ cookiecutter.package_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "package_short_description": "",
+  "package_developers": "{{ cookiecutter.package_name }} Developers",
+  "package_version": "0.0.0",
+  "python_version": "3.8",
+  "poetry_version": "1.3.2",
+  "docker_base_image": "python:{{ cookiecutter.python_version }}-slim",
+  "max_line_length": "88",
+  "license": [
+    "BSD 3-Clause",
+    "MIT",
+    "GNU General Public License v3.0"
+  ]
+}
