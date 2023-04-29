@@ -4,4 +4,7 @@ __version__ = metadata.version("{{ cookiecutter.package_slug }}")
 
 from .core import *
 
-del (core,)
+del (
+    metadata,
+    core,
+)
